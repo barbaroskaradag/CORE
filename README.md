@@ -1,0 +1,2 @@
+# CORE
+.net core examples
