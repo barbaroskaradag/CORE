@@ -1,0 +1,45 @@
+﻿@model AppUserUpdateViewModel
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form enctype="multipart/form-data" asp-action="UpdateUser" asp-controller="Panel" method="post" class="w-75 mx-auto p-3">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SurName"></label>
+        <span asp-validation-for="SurName" class="text-danger"></span>
+        <input asp-for="SurName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        <input asp-for="PhoneNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Resminiz</label>
+                <img src="~/img/@Model.Picture" alt="Name" class="w-100 img-fluid" />
+            </div>
+            <div class="col-md-8">
+                <input type="file" asp-for="Picture" />
+            </div>
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <button type="submit" class="btn btn-info btn-sm">Kaydet</button>
+
+</form>
+

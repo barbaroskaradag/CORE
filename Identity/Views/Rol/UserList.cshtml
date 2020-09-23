@@ -1,0 +1,38 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-hover table-sm">
+    <tr>
+        <td>Ad</td>
+        <td>Roller</td>
+        <td>Claims</td>
+        <td>İşlem</td>
+    </tr>
+
+    @if (Model.Count > 0)
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>
+                    <RolGoster user-id="@item.Id"></RolGoster>
+                </td>
+                <td>
+                    <a asp-action="AssignRole" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Düzenle</a>
+                    <a asp-action="AddClaim" asp-controller="Female" asp-route-id="@item.Id" class="btn btn-info btn-sm">Bayan Claim Ekle</a>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td>Sistemizde  kayıtlı rol bulunmuyor.</td>
+        </tr>
+    }
+
+</table>

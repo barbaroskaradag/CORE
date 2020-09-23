@@ -1,0 +1,57 @@
+﻿@model UserSignUpViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>KayitOl</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form class="w-50 mx-auto p-4 mt-3 shadow" asp-action="KayitOl">
+        <h4 class="text-center lead">Kayit Ol</h4>
+        <div class="form-group">
+            <label asp-for="@Model.Name"></label>
+            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.Name" placeholder="Adınız" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Surname"></label>
+            <span asp-validation-for="@Model.Surname" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.Surname" placeholder="Soyadınız" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.UserName"></label>
+            <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.UserName" placeholder="Kullanıcı Adı" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Password"></label>
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.Password" placeholder="Şifre" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.ConfirmPassword"></label>
+            <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.ConfirmPassword" placeholder="Şifre Tekrar" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Email"></label>
+            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            <input class="form-control" asp-for="@Model.Email" placeholder="E-Mail" />
+        </div>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+        </div>
+
+        <input type="submit" class="btn btn-primary btn-sm" value="Kayit Ol" />
+        <small>Hesabını var mı? <a class="btn btn-link btn-sm" asp-action="GirisYap">Giriş Yap.</a></small>
+    </form>
+
+</body>
+</html>
