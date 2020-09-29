@@ -1,0 +1,19 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Edit" method="post" class="w-75 mx-auto m-3 p-3">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Kategori Adı : </label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <button type="submit" class="btn btn-info btn-sm">Kaydet</button>
+</form>
+
+

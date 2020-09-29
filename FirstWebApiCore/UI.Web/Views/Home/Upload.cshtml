@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data" class="w-75 mx-auto m-3 p-3">
+    <div class="form-group">
+        <label>Dosya : </label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <button type="submit" class="btn btn-info btn-sm">Gönder</button>
+</form>
+
+
