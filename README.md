@@ -1,2 +1,2 @@
 # CORE
-.net core examples
+.Net CORE ve CORE Web Api üzerine yapmış olduğum çalışmalara buradan erişebilirsiniz.
