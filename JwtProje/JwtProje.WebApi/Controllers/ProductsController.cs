@@ -57,7 +57,7 @@ namespace JwtProje.WebApi.Controllers
         [HttpPost]
         [Authorize(Roles = RoleInfo.Admin)]
         [ValidModel]
-        public async Task<IActionResult> Add([FromForm] ProductAddDto product)
+        public async Task<IActionResult> Add(ProductAddDto product)
         {
             await _productService.Add(_mapper.Map<Product>(product));
             return Created("", product);
@@ -66,7 +66,7 @@ namespace JwtProje.WebApi.Controllers
         [HttpPut]
         [Authorize(Roles = RoleInfo.Admin)]
         [ValidModel]
-        public async Task<IActionResult> Update([FromForm] ProductUpdateDto product)
+        public async Task<IActionResult> Update(ProductUpdateDto product)
         {
             await _productService.Update(_mapper.Map<Product>(product));
             return NoContent();

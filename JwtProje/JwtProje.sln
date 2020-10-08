@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtProje.Entities", "JwtPro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtProje.DataAccess", "JwtProje.DataAccess\JwtProje.DataAccess.csproj", "{E56B890A-C907-4681-80B9-2BCE14C3CD7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtProje.Business", "JwtProje.Business\JwtProje.Business.csproj", "{D73293D6-2BD3-49FD-A230-7CC11ED08C8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtProje.Business", "JwtProje.Business\JwtProje.Business.csproj", "{D73293D6-2BD3-49FD-A230-7CC11ED08C8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtProje.WebApi", "JwtProje.WebApi\JwtProje.WebApi.csproj", "{ADEEF500-CC49-4D61-AC7A-DB54E15327CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtProje.WebApi", "JwtProje.WebApi\JwtProje.WebApi.csproj", "{ADEEF500-CC49-4D61-AC7A-DB54E15327CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

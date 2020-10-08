@@ -1,3 +1,4 @@
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using JwtProje.Business.Containers.MicrosoftIoc;
 using JwtProje.Business.Interfaces;
@@ -11,7 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
-using YSKProje.UdemyJwtProje.WebApi;
 
 namespace JwtProje.WebApi
 {
@@ -28,10 +28,11 @@ namespace JwtProje.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.addDependenceis();
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped(typeof(ValidId<>));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
             {
-                opt.RequireHttpsMetadata = false; // https kullanýmý pasife çekilir
+                opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidIssuer = JwtInfo.Issuer,
@@ -46,8 +47,8 @@ namespace JwtProje.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
-            IAppUserService appUserService, IAppUserRoleService appUserRoleService, IAppRoleService appRoleService)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            //IAppUserService appUserService, IAppUserRoleService appUserRoleService, IAppRoleService appRoleService)
         {
             //if (env.IsDevelopment())
             //{
@@ -55,7 +56,7 @@ namespace JwtProje.WebApi
             //}
 
             //bir kere çalýþmasý yeterli, sonrasýnda kapatýldý.
-            JwtIdentityInitializer.Seed(appUserService, appUserRoleService, appRoleService).Wait();
+            //JwtIdentityInitializer.Seed(appUserService, appUserRoleService, appRoleService).Wait();
 
             //hatayý global olarak ele alýr.
             //localhost/error
